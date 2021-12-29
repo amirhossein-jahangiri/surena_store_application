@@ -9,11 +9,13 @@ class ThemeConfig {
   static const Color _lightPrimaryColor = Colors.purple;
   static const Color _lightOnPrimaryColor = Colors.white;
   static const Color _lightPrimaryVariantColor = Colors.purpleAccent;
+  static const Color _lightSecondaryColor =  Color(0xFFAB47BC);
 
   static ColorScheme lightColorScheme = const ColorScheme.light(
     primary: _lightPrimaryColor,
     onPrimary: _lightOnPrimaryColor,
     primaryVariant: _lightPrimaryVariantColor,
+    secondary: _lightSecondaryColor,
   );
 
   static TextTheme lightTextTheme = TextTheme(
@@ -44,6 +46,10 @@ class ThemeConfig {
     size: 10.sp,
   );
 
+  static AppBarTheme lightAppBarTheme = AppBarTheme(
+    iconTheme: lightIconTheme.copyWith(color: _lightOnPrimaryColor),
+  );
+
   static final ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: _lightScaffoldBackColor,
     fontFamily: fontFamily,
@@ -51,6 +57,7 @@ class ThemeConfig {
     colorScheme: lightColorScheme,
     textTheme: lightTextTheme,
     iconTheme: lightIconTheme,
+    appBarTheme: lightAppBarTheme,
   );
 
 }
