@@ -32,6 +32,8 @@ dependencies:
   provider: ^6.0.1
   sizer: ^2.0.15
   carousel_slider: ^4.0.0
+  cached_network_image: ^3.2.0
+  shimmer: ^2.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
