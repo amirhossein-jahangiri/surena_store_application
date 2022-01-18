@@ -9,7 +9,7 @@ class ThemeConfig {
   static const Color _lightPrimaryColor = Colors.purple;
   static const Color _lightOnPrimaryColor = Colors.white;
   static const Color _lightPrimaryVariantColor = Colors.purpleAccent;
-  static const Color _lightSecondaryColor =  Color(0xFFAB47BC);
+  static const Color _lightSecondaryColor =  Colors.black;
 
   static ColorScheme lightColorScheme = const ColorScheme.light(
     primary: _lightPrimaryColor,
@@ -36,8 +36,7 @@ class ThemeConfig {
     color: _lightPrimaryColor,
   );
   static TextStyle lightButtonStyle = TextStyle(
-    fontSize: 14.sp,
-    letterSpacing: 0.75,
+    fontSize: 13.sp,
     color: _lightPrimaryColor,
   );
 
