@@ -16,7 +16,7 @@ class AmazingProductsWithOfferBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50.h,
-      width: double.infinity,
+      //width: double.infinity,
       color: Theme.of(context).colorScheme.primary,
       child: ListView(
         shrinkWrap: true,
