@@ -1,0 +1,17 @@
+import 'package:flutter/material.dart';
+
+class ShoppingCartScreen extends StatelessWidget {
+  const ShoppingCartScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: const Center(
+        child: Text(
+          'سبد خرید'
+        ),
+      ),
+    );
+  }
+}
