@@ -10,12 +10,14 @@ class ThemeConfig {
   static const Color _lightOnPrimaryColor = Colors.white;
   static const Color _lightPrimaryVariantColor = Colors.purpleAccent;
   static const Color _lightSecondaryColor =  Colors.black;
+  static const Color _lightOnSecondaryColor = Colors.grey;
 
   static ColorScheme lightColorScheme = const ColorScheme.light(
     primary: _lightPrimaryColor,
     onPrimary: _lightOnPrimaryColor,
     primaryVariant: _lightPrimaryVariantColor,
     secondary: _lightSecondaryColor,
+    onSecondary: _lightOnSecondaryColor,
   );
 
   static TextTheme lightTextTheme = TextTheme(
