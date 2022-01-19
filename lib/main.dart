@@ -6,11 +6,13 @@ import '/config/theme_config.dart';
 import '/config/route_config.dart';
 import '/constants/route_constants.dart';
 import 'modules/provider_models/product_overview_screen_slider_provider_model.dart';
+import 'modules/provider_models/app_controller_provider_model.dart';
 
 void main() => runApp(
       MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (context) => ProductOverViewScreenSliderProviderModel()),
+          ChangeNotifierProvider(create: (context) => AppControllerProviderModel()),
         ],
         child: const MyApp(),
       ),
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeConfig.lightTheme,
-          initialRoute: RouteConstants.PRODUCT_OVERVIEW_SCREEN_ROUTE_NAME,
+          initialRoute: RouteConstants.TABS_SCREEN_ROUTE_NAME,
           routes: RouteConfig.routes,
         );
       },
