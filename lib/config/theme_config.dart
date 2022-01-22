@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -26,6 +27,7 @@ class ThemeConfig {
     bodyText1: lightBodyText1Style,
     bodyText2: lightBodyText2Style,
     button: lightButtonStyle,
+    subtitle2: lightSubTitle2Style,
   );
 
   static TextStyle lightBodyText1Style = TextStyle(
@@ -43,6 +45,10 @@ class ThemeConfig {
     fontSize: 13.sp,
     color: _lightPrimaryColor,
   );
+  static TextStyle lightSubTitle2Style = TextStyle(
+    fontSize: 11.sp,
+    color: _lightOnSecondaryColor,
+  );
 
   static IconThemeData lightIconTheme = IconThemeData(
     color: _lightPrimaryVariantColor,
@@ -50,7 +56,10 @@ class ThemeConfig {
   );
 
   static AppBarTheme lightAppBarTheme = AppBarTheme(
-    iconTheme: lightIconTheme.copyWith(color: _lightOnPrimaryColor),
+    backgroundColor: _lightScaffoldBackColor,
+    elevation: 5,
+    iconTheme: lightIconTheme.copyWith(color: _lightSecondaryColor),
+    toolbarHeight: 8.h,
   );
 
   static final ThemeData lightTheme = ThemeData(
@@ -61,6 +70,11 @@ class ThemeConfig {
     textTheme: lightTextTheme,
     iconTheme: lightIconTheme,
     appBarTheme: lightAppBarTheme,
+    // outlinedButtonTheme: OutlinedButtonThemeData(
+    //   style: ButtonStyle(
+    //     shape: ,
+    //   ),
+    // ),
   );
 
 }
