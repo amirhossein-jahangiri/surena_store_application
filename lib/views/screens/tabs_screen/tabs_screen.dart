@@ -39,7 +39,7 @@ class _TabsScreenState extends State<TabsScreen> {
       child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
           unselectedItemColor: Theme.of(context).colorScheme.onSecondary,
-          selectedItemColor: Theme.of(context).colorScheme.primary,
+          selectedItemColor: Theme.of(context).colorScheme.secondary,
           currentIndex: context.watch<AppControllerProviderModel>().currentIndex,
           onTap: (int index) {
             context.read<AppControllerProviderModel>().updateTabsIndex(index);
