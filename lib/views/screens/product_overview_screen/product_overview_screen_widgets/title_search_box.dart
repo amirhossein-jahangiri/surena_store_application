@@ -12,18 +12,22 @@ class TitleSearchBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      style: Theme.of(context).textTheme.bodyText2!.copyWith(
-        color: Colors.white,
-        letterSpacing: 1,
+    return Container(
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.onSecondary.withOpacity(0.2),
+        borderRadius: BorderRadius.circular(8.sp),
       ),
-      decoration: InputDecoration(
-        border: InputBorder.none,
-        icon: Icon(Icons.search, color: Theme.of(context).colorScheme.onPrimary, size: 18.sp),
-        hintText: AppConstants.PRODUCT_OVERVIEW_SCREEN_APP_BAR_TITLE,
-        hintStyle: Theme.of(context).textTheme.bodyText2!.copyWith(
-          color: Colors.white,
+      child: TextField(
+        style: Theme.of(context).textTheme.button!.copyWith(
           letterSpacing: 1,
+        ),
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          icon: Icon(Icons.search, color: Theme.of(context).colorScheme.primary, size: 18.sp),
+          hintText: AppConstants.PRODUCT_OVERVIEW_SCREEN_APP_BAR_TITLE,
+          hintStyle: Theme.of(context).textTheme.button!.copyWith(
+            letterSpacing: 1,
+          ),
         ),
       ),
     );
