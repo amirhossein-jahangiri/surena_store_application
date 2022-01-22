@@ -5,9 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '/constants/assets_path_constants.dart';
 import '/constants/app_constants.dart';
 
-
 // todo this widget for display amazing offer banner in product overview screens
-
 
 class AmazingOfferBanner extends StatelessWidget {
   const AmazingOfferBanner({
@@ -22,7 +20,6 @@ class AmazingOfferBanner extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-
           const Spacer(),
 
           // todo display image file
@@ -39,17 +36,27 @@ class AmazingOfferBanner extends StatelessWidget {
             AppConstants.AMAZING_OFFER_TEXT,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyText1!.copyWith(
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
           ),
 
           const Spacer(),
 
           // todo display see all amazing products text and navigate to ...
-          Text(
-            AppConstants.AMAZING_OFFER_SEE_ALL_PRODUCTS_TEXT,
-            style: Theme.of(context).textTheme.button!.copyWith(
-              color: Theme.of(context).colorScheme.onPrimary,
+          OutlinedButton(
+            onPressed: () {},
+            child: Text(
+              AppConstants.AMAZING_OFFER_SEE_ALL_PRODUCTS_TEXT,
+              style: Theme.of(context).textTheme.button!.copyWith(
+                    color: Theme.of(context).colorScheme.onPrimary,
+                  ),
+            ),
+            style: ButtonStyle(
+              animationDuration: Duration(seconds: 2),
+              side: MaterialStateBorderSide.resolveWith(
+                (states) => BorderSide(color: Theme.of(context).colorScheme.onPrimary),
+              ),
+              shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.sp))),
             ),
           ),
         ],
