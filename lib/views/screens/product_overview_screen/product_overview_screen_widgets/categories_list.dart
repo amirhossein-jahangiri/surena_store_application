@@ -29,7 +29,7 @@ class CategoriesList extends StatelessWidget {
               ),
               Text(
                 'item $index',
-                style: Theme.of(context).textTheme.button,
+                style: Theme.of(context).textTheme.subtitle2,
               ),
             ],
           );
