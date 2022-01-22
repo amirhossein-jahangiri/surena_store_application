@@ -19,7 +19,6 @@ class ProductOverViewScreen extends StatefulWidget {
 class _ProductOverViewScreenState extends State<ProductOverViewScreen> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
