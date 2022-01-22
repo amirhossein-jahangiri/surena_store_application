@@ -70,11 +70,6 @@ class ThemeConfig {
     textTheme: lightTextTheme,
     iconTheme: lightIconTheme,
     appBarTheme: lightAppBarTheme,
-    // outlinedButtonTheme: OutlinedButtonThemeData(
-    //   style: ButtonStyle(
-    //     shape: ,
-    //   ),
-    // ),
   );
 
 }
