@@ -3,6 +3,7 @@ import 'package:sizer/sizer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 import '/constants/assets_path_constants.dart';
+import '../product_overview_screen_widgets/product_price_with_discount.dart';
 
 // todo this widget for display amazing products in product overview screen
 
@@ -20,7 +21,7 @@ class AmazingProductsList extends StatelessWidget {
       itemBuilder: (context, index) {
         return Container(
           height: 50.h,
-          width: 60.w,
+          width: 50.w,
           margin: EdgeInsets.symmetric(
             vertical: 3.h,
             horizontal: 3.w,
@@ -32,11 +33,14 @@ class AmazingProductsList extends StatelessWidget {
           ),
           child: Column(
             children: [
+
+              const Spacer(),
+
               // todo display image of product
               CachedNetworkImage(
                 imageUrl: AssetsPathConstants
                     .RECOMMENDED_PRODUCTS_IMAGE_ASSET,
-                height: 25.h,
+                height: 20.h,
                 fit: BoxFit.contain,
                 progressIndicatorBuilder:
                     (context, url, progress) {
@@ -46,17 +50,22 @@ class AmazingProductsList extends StatelessWidget {
                 },
               ),
 
+              const Spacer(),
+
               // todo display title of product
-              Text(
-                'کیف زنانهکیف زنانهکیف زنانهکیف زنانهکیف زنانه',
-                textAlign: TextAlign.right,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyText1!
-                    .copyWith(
-                  color: Theme.of(context)
-                      .colorScheme
-                      .secondary,
+              SizedBox(
+                width: double.infinity,
+                child: Text(
+                  'کیف زنانه مدل p',
+                  textAlign: TextAlign.right,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText2!
+                      .copyWith(
+                    color: Theme.of(context)
+                        .colorScheme
+                        .secondary,
+                  ),
                 ),
               ),
 
@@ -67,37 +76,7 @@ class AmazingProductsList extends StatelessWidget {
               ),
 
               // todo display price and discount percent
-              Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      '23000 تومان',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText2!
-                          .copyWith(
-                        color: Theme.of(context)
-                            .colorScheme
-                            .secondary,
-                      ),
-                    ),
-                  ),
-                  Chip(
-                    label: Text(
-                      '10%',
-                      style: Theme.of(context)
-                          .textTheme
-                          .button!
-                          .copyWith(
-                        color: Theme.of(context)
-                            .colorScheme
-                            .onPrimary,
-                      ),
-                    ),
-                    backgroundColor: Colors.red,
-                  ),
-                ],
-              ),
+              const ProductPriceWithDiscount(),
             ],
           ),
         );
@@ -105,3 +84,7 @@ class AmazingProductsList extends StatelessWidget {
     );
   }
 }
+
+
+
+

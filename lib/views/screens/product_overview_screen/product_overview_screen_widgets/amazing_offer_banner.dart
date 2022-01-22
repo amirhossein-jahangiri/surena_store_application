@@ -18,7 +18,7 @@ class AmazingOfferBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10.sp),
-      width: 60.w,
+      width: 40.w,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -28,7 +28,7 @@ class AmazingOfferBanner extends StatelessWidget {
           // todo display image file
           SvgPicture.asset(
             AssetsPathConstants.AMAZING_OFFER_BANNER_SVG,
-            height: 20.h,
+            height: 15.h,
             color: Theme.of(context).colorScheme.onPrimary,
           ),
 
@@ -37,6 +37,7 @@ class AmazingOfferBanner extends StatelessWidget {
           // todo display amazing offer text
           Text(
             AppConstants.AMAZING_OFFER_TEXT,
+            textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyText1!.copyWith(
               color: Theme.of(context).colorScheme.onPrimary,
             ),
