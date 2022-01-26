@@ -5,9 +5,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import '/constants/assets_path_constants.dart';
 import '/views/screens/product_overview_screen/product_overview_screen_widgets/product_price_with_discount.dart';
 
-// todo display this widget for show items in best selling products list on product overview screen
+// todo display best selling product item in list of best selling products list on product overview screen
 
-class BestSellingProductsItem extends StatelessWidget {
+class BestSellingProductItem extends StatelessWidget {
   final double? height;
   final double? width;
   final String? image;
@@ -15,7 +15,7 @@ class BestSellingProductsItem extends StatelessWidget {
   final String? price;
   final String? discountPercent;
 
-  const BestSellingProductsItem({
+  const BestSellingProductItem({
     this.height,
     this.width,
     this.image,

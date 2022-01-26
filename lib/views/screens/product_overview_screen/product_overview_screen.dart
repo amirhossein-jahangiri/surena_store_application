@@ -6,12 +6,12 @@ import 'product_overview_screen_widgets/title_search_box.dart';
 import 'product_overview_screen_widgets/image_slider.dart';
 import 'product_overview_screen_widgets/categories_list.dart';
 import 'product_overview_screen_widgets/amazing_products_with_offer_banner.dart';
-import 'product_overview_screen_widgets/best_selling_products_grid_list.dart';
+import 'product_overview_screen_widgets/best_selling_products_list.dart';
 
 // todo this screen for show and display product overview
 
 class ProductOverViewScreen extends StatefulWidget {
-  ProductOverViewScreen({Key? key}) : super(key: key);
+  const ProductOverViewScreen({Key? key}) : super(key: key);
 
   @override
   State<ProductOverViewScreen> createState() => _ProductOverViewScreenState();
@@ -40,8 +40,8 @@ class _ProductOverViewScreenState extends State<ProductOverViewScreen> {
             // todo display recommended products
             const AmazingProductsWithOfferBanner(),
 
-            // todo display best selling products in custom gridview
-            BestSellingProductsGridList(),
+            // todo display best selling products
+            const BestSellingProductsList(),
           ],
         ),
       ),
