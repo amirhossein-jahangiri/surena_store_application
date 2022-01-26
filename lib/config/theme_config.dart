@@ -6,6 +6,7 @@ import 'package:sizer/sizer.dart';
 
 class ThemeConfig {
   static const String fontFamily = 'IranSans';
+  static const String secondaryFont = 'Aviny';
   static const Color _lightScaffoldBackColor = Colors.white;
   static const Color _lightPrimaryColor = Colors.purple;
   static const Color _lightOnPrimaryColor = Colors.white;
@@ -28,6 +29,7 @@ class ThemeConfig {
     bodyText2: lightBodyText2Style,
     button: lightButtonStyle,
     subtitle2: lightSubTitle2Style,
+    overline: lightOverLineStyle,
   );
 
   static TextStyle lightBodyText1Style = TextStyle(
@@ -47,6 +49,11 @@ class ThemeConfig {
   );
   static TextStyle lightSubTitle2Style = TextStyle(
     fontSize: 11.sp,
+    color: _lightOnSecondaryColor,
+  );
+  static TextStyle lightOverLineStyle = TextStyle(
+    fontSize: 15.sp,
+    fontFamily: secondaryFont,
     color: _lightOnSecondaryColor,
   );
 
