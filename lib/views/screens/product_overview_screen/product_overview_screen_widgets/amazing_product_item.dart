@@ -4,9 +4,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 
 import '/views/screens/product_overview_screen/product_overview_screen_widgets/product_price_with_discount.dart';
 
-// todo display this widget for show items in amazing products list on product overview screen
+// todo display amazing product item in list of amazing products on product overview screen
 
-class AmazingProductsItem extends StatelessWidget {
+class AmazingProductItem extends StatelessWidget {
   final double? height;
   final double? width;
   final String? image;
@@ -14,7 +14,7 @@ class AmazingProductsItem extends StatelessWidget {
   final String? price;
   final String? discountPercent;
 
-  const AmazingProductsItem({
+  const AmazingProductItem({
     this.height,
     this.width,
     this.image,
