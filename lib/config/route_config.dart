@@ -5,6 +5,7 @@ import '/views/screens/product_overview_screen/product_overview_screen.dart';
 import '/views/screens/tabs_screen/tabs_screen.dart';
 import '/views/screens/categories_screen/categories_screen.dart';
 import '/views/screens/user_profile_screen/user_profile_screen.dart';
+import '/views/screens/product_details_screen/product_details_screen.dart';
 
 class RouteConfig {
   static Map<String, Widget Function(BuildContext)> routes = {
@@ -13,5 +14,6 @@ class RouteConfig {
     RouteConstants.CATEGORIES_SCREEN_ROUTE_NAME: (context) => CategoriesScreen(),
     RouteConstants.SHOPPING_CART_SCREEN_ROUTE_NAME: (context) => CategoriesScreen(),
     RouteConstants.USER_PROFILE_SCREEN_ROUTE_NAME: (context) => UserProfileScreen(),
+    RouteConstants.PRODUCT_DETAILS_SCREEN_ROUTE_NAME: (context) => ProductDetailsScreen(),
   };
 }
