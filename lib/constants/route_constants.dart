@@ -7,4 +7,5 @@ class RouteConstants {
   static const String CATEGORIES_SCREEN_ROUTE_NAME = '/categories';
   static const String SHOPPING_CART_SCREEN_ROUTE_NAME = '/shopping-cart';
   static const String USER_PROFILE_SCREEN_ROUTE_NAME = '/user-profile';
+  static const String PRODUCT_DETAILS_SCREEN_ROUTE_NAME = '/product-details';
 }
