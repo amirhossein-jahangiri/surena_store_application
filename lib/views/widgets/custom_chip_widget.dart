@@ -4,29 +4,21 @@ import 'package:flutter/material.dart';
 
 class CustomChipWidget extends StatelessWidget {
   final String? label;
-  final Color? color;
+  final TextStyle? labelStyle;
+  final Color? backColor;
 
   const CustomChipWidget({
     this.label,
-    this.color,
+    this.labelStyle,
+    this.backColor,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Chip(
-      label: Text(
-        label!,
-        style: Theme.of(context)
-            .textTheme
-            .button!
-            .copyWith(
-          color: Theme.of(context)
-              .colorScheme
-              .onPrimary,
-        ),
-      ),
-      backgroundColor: color!,
+      label: Text(label!, style: labelStyle),
+      backgroundColor: backColor!,
     );
   }
 }

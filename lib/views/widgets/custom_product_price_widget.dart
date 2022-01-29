@@ -4,23 +4,15 @@ import 'package:flutter/material.dart';
 
 class CustomProductPriceWidget extends StatelessWidget {
   final String? title;
+  final TextStyle? titleStyle;
   const CustomProductPriceWidget({
     this.title,
+    this.titleStyle,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      '23000 تومان',
-      style: Theme.of(context)
-          .textTheme
-          .button!
-          .copyWith(
-        color: Theme.of(context)
-            .colorScheme
-            .secondary,
-      ),
-    );
+    return Text(title!, style:titleStyle);
   }
 }

@@ -6,21 +6,31 @@ import '/views/screens/product_overview_screen/product_overview_screen_widgets/p
 
 // todo display amazing product item in list of amazing products on product overview screen
 
-class AmazingProductItem extends StatelessWidget {
+class ProductItem extends StatelessWidget {
   final double? height;
   final double? width;
+  final double? verticalMargin;
   final String? image;
+  final double? imageSize;
   final String? title;
+  final TextStyle? titleStyle;
   final String? price;
+  final TextStyle? priceStyle;
   final String? discountPercent;
+  final TextStyle? discountPercentStyle;
 
-  const AmazingProductItem({
+  const ProductItem({
     this.height,
     this.width,
+    this.verticalMargin,
     this.image,
+    this.imageSize,
     this.title,
+    this.titleStyle,
     this.price,
+    this.priceStyle,
     this.discountPercent,
+    this.discountPercentStyle,
     Key? key,
   }) : super(key: key);
 
@@ -30,7 +40,7 @@ class AmazingProductItem extends StatelessWidget {
       height: height,
       width: width,
       margin: EdgeInsets.symmetric(
-        vertical: 3.h,
+        vertical: verticalMargin!,
         horizontal: 3.w,
       ),
       padding: EdgeInsets.all(8.sp),
@@ -45,7 +55,7 @@ class AmazingProductItem extends StatelessWidget {
           // todo display image of product
           CachedNetworkImage(
             imageUrl: image!,
-            height: 20.h,
+            height: imageSize!,
             fit: BoxFit.contain,
             progressIndicatorBuilder: (context, url, progress) {
               return Center(
@@ -62,9 +72,7 @@ class AmazingProductItem extends StatelessWidget {
             child: Text(
               title!,
               textAlign: TextAlign.right,
-              style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                    color: Theme.of(context).colorScheme.secondary,
-                  ),
+              style: titleStyle!,
             ),
           ),
 
@@ -77,10 +85,14 @@ class AmazingProductItem extends StatelessWidget {
           // todo display price and discount percent
           ProductPriceWithDiscount(
             price: price!,
+            priceStyle: priceStyle,
             discountPercent: discountPercent!,
+            discountPercentStyle: discountPercentStyle,
           ),
         ],
       ),
     );
   }
 }
+
+

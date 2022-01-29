@@ -35,7 +35,7 @@ class ImageSlider extends StatelessWidget {
             options: CarouselOptions(
               initialPage: imageSlider.currentIndex,
               aspectRatio: 4 / 2,
-              autoPlay: true,
+              autoPlay: false,
               scrollDirection: Axis.horizontal,
               enlargeCenterPage: true,
               height: 25.h,

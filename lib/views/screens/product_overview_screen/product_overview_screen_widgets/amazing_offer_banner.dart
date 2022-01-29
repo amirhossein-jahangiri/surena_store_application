@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '/constants/assets_path_constants.dart';
 import '/constants/app_constants.dart';
+import '../product_overview_screen_widgets/see_all_amazing_products_btn.dart';
 
 // todo this widget for display amazing offer banner in product overview screens
 
@@ -25,7 +26,7 @@ class AmazingOfferBanner extends StatelessWidget {
           // todo display image file
           SvgPicture.asset(
             AssetsPathConstants.AMAZING_OFFER_BANNER_SVG,
-            height: 15.h,
+            height: 13.h,
             color: Theme.of(context).colorScheme.onPrimary,
           ),
 
@@ -35,7 +36,7 @@ class AmazingOfferBanner extends StatelessWidget {
           Text(
             AppConstants.AMAZING_OFFER_TEXT,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodyText1!.copyWith(
+            style: Theme.of(context).textTheme.bodyText2!.copyWith(
                   color: Theme.of(context).colorScheme.onPrimary,
                 ),
           ),
@@ -43,24 +44,15 @@ class AmazingOfferBanner extends StatelessWidget {
           const Spacer(),
 
           // todo display see all amazing products text and navigate to ...
-          OutlinedButton(
-            onPressed: () {},
-            child: Text(
-              AppConstants.AMAZING_OFFER_SEE_ALL_PRODUCTS_TEXT,
-              style: Theme.of(context).textTheme.button!.copyWith(
-                    color: Theme.of(context).colorScheme.onPrimary,
-                  ),
-            ),
-            style: ButtonStyle(
-              animationDuration: Duration(seconds: 2),
-              side: MaterialStateBorderSide.resolveWith(
-                (states) => BorderSide(color: Theme.of(context).colorScheme.onPrimary),
-              ),
-              shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.sp))),
-            ),
+          SeeAllAmazingProductsBtn(
+            title: AppConstants.AMAZING_OFFER_SEE_ALL_PRODUCTS_TEXT,
+            press: () {
+              print('see all amazing products button is pressed');
+            },
           ),
         ],
       ),
     );
   }
 }
+

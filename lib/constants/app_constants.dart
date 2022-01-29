@@ -13,4 +13,5 @@ class AppConstants {
   static const String PRODUCT_OVERVIEW_SCREEN_APP_BAR_TITLE = 'جستجو در سورنا';
   static const String AMAZING_OFFER_TEXT = 'پیشنهاد های شگفت انگیز';
   static const String AMAZING_OFFER_SEE_ALL_PRODUCTS_TEXT = 'مشاهده همه';
+  static const String BEST_SELLING_PRODUCTS_TEXT = 'محصولات پر فروش';
 }
