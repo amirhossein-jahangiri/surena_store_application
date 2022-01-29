@@ -59,7 +59,7 @@ class ThemeConfig {
 
   static IconThemeData lightIconTheme = IconThemeData(
     color: _lightPrimaryVariantColor,
-    size: 10.sp,
+    size: 10.h,
   );
 
   static AppBarTheme lightAppBarTheme = AppBarTheme(
