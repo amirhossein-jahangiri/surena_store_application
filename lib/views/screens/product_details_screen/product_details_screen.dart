@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:sizer/sizer.dart';
-import 'package:surena_store_application/constants/app_constants.dart';
 
+import '/constants/app_constants.dart';
+import '/constants/assets_path_constants.dart';
+import '/views/screens/product_details_screen/product_details_screen_widgets/custom_card_product_title_id_and_category_name.dart';
+import '/views/widget_testing.dart';
 import '/views/widgets/shopping_cart_badget.dart';
 import './product_details_screen_widgets/product_price_with_buy_btn_in_bottom_nav_bar.dart';
 
-
 // todo display product details screen
-
 
 class ProductDetailsScreen extends StatelessWidget {
   const ProductDetailsScreen({Key? key}) : super(key: key);
@@ -35,11 +37,12 @@ class ProductDetailsScreen extends StatelessWidget {
               onPressed: () {},
               icon: const Icon(Icons.favorite_outline),
               iconSize: 3.h,
-              tooltip: AppConstants.ADD_PRODUCT_TO_FAVORITE_LIST_ICON_BTN_TOOLTIP,
+              tooltip:
+                  AppConstants.ADD_PRODUCT_TO_FAVORITE_LIST_ICON_BTN_TOOLTIP,
             ),
             IconButton(
               onPressed: () {
-                // todo solve tooltip problem in 
+                // todo solve tooltip problem in
               },
               icon: const Icon(Icons.more_vert),
               iconSize: 3.h,
@@ -50,38 +53,110 @@ class ProductDetailsScreen extends StatelessWidget {
         // todo display product price and buy button widget
         bottomNavigationBar: const ProductPriceWithBuyBtnInBottomNavBar(),
 
+        // todo body of this screen
         body: ListView(
+          shrinkWrap: true,
+          scrollDirection: Axis.vertical,
           children: [
-            // todo product image
-            Placeholder(
-              fallbackHeight: 30.h,
+            SizedBox(height: 1.h),
+            // todo display image
+            CachedNetworkImage(
+              imageUrl: AssetsPathConstants.RECOMMENDED_PRODUCTS_IMAGE_ASSET,
+              height: 30.h,
+              fit: BoxFit.contain,
+              progressIndicatorBuilder: (context, url, progress) {
+                return Center(
+                  child: CircularProgressIndicator(
+                    value: progress.progress,
+                  ),
+                );
+              },
             ),
-
-            // todo product title
-            Placeholder(
-              fallbackHeight: 10.h,
+            // todo display title
+            const CustomCardProductTitleProductIdAndProductCategoryName(),
+            SizedBox(height: 1.h),
+            // todo display details
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 3.w,
+              ),
+              child: ExpansionPanelList(
+                elevation: 0.0,
+                animationDuration: const Duration(seconds: 1),
+                expandedHeaderPadding: EdgeInsets.all(10.sp),
+                children: <ExpansionPanel>[
+                  ExpansionPanel(
+                    headerBuilder: (context, isExpanded) {
+                      return Padding(
+                        padding: EdgeInsets.all(10.sp),
+                        child: Text(
+                          'توضیحات',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyText1!
+                              .copyWith(
+                                  color:
+                                      Theme.of(context).colorScheme.secondary,
+                                  fontWeight: FontWeight.w500),
+                        ),
+                      );
+                    },
+                    body: Text('hi'),
+                    backgroundColor: Theme.of(context).colorScheme.surface,
+                  ),
+                ],
+              ),
             ),
+            SizedBox(height: 1.h),
 
-            // todo product details / caractristics
-            Placeholder(
-              fallbackHeight: 10.h,
+            // todo display user comments
+            Card(
+              margin: EdgeInsets.symmetric(horizontal: 3.w),
+              elevation: 0.0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.sp),
+              ),
+              color: Theme.of(context).colorScheme.surface,
+              child: SizedBox(
+                height: 30.h,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      width: 70.w,
+                      height: 40.h,
+                      margin: EdgeInsets.all(8.sp),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.onPrimary,
+                        borderRadius: BorderRadius.circular(8.sp),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            color: Theme.of(context)
+                                .colorScheme
+                                .primaryVariant
+                                .withOpacity(0.1),
+                            blurRadius: 10,
+                            spreadRadius: 1,
+                            offset: Offset(-1.w, -0.5.h),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              ),
             ),
+            SizedBox(height: 1.h),
 
-            // todo user comments
+            // todo display similarly products
             Placeholder(
-              fallbackHeight: 30.h,
-            ),
-
-            // todo list of similar product
-            Placeholder(
-              fallbackHeight: 50.h,
+              fallbackHeight: 60.h,
             ),
           ],
         ),
-
-
       ),
     );
   }
 }
-
