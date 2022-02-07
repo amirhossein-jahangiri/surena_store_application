@@ -45,7 +45,7 @@ class ImageSlider extends StatelessWidget {
             ),
           ),
 
-          // todo for indicator
+          // todo display indicator
           Positioned(
             bottom: 0,
             child: SizedBox(
@@ -54,7 +54,7 @@ class ImageSlider extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: imageSlider.imageList.asMap().entries.map((thisone) => Container(
                   margin: const EdgeInsets.all(5),
-                  height: 2.h,
+                  height: 1.h,
                   width: 3.w,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
