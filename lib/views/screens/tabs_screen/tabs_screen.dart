@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
 
 import '/modules/provider_models/app_controller_provider_model.dart';
