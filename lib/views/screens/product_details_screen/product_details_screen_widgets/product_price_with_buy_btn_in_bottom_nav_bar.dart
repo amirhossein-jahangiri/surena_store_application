@@ -14,7 +14,7 @@ class ProductPriceWithBuyBtnInBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 5.w),
-      height: 10.h,
+      height: 8.h,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.onPrimary,
@@ -32,8 +32,8 @@ class ProductPriceWithBuyBtnInBottomNavBar extends StatelessWidget {
         children: [
           // todo buy button
           SizedBox(
-            height: 6.h,
-            width: 50.w,
+            height: 5.h,
+            width: 40.w,
             child: ElevatedButton(
               onPressed: () {},
               child: const Text(AppConstants.ADD_TO_SHOPPING_CART_BTN_TEXT),
