@@ -21,7 +21,7 @@ class AmazingProductsList extends StatelessWidget {
         // todo display product item in list of amazing products
         return ProductItem(
           height: 50.h,
-          width: 50.w,
+          width: 45.w,
           verticalMargin: 3.h,
           image: AssetsPathConstants.RECOMMENDED_PRODUCTS_IMAGE_ASSET,
           imageSize: 20.h,
