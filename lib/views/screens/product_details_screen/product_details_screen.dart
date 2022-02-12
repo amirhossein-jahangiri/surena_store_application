@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:sizer/sizer.dart';
+import 'package:surena_store_application/views/widgets/custom_expansion_tile.dart';
 
 import '/constants/app_constants.dart';
 import '/constants/assets_path_constants.dart';
@@ -50,6 +51,7 @@ class ProductDetailsScreen extends StatelessWidget {
             ),
           ],
         ),
+
         // todo display product price and buy button widget
         bottomNavigationBar: const ProductPriceWithBuyBtnInBottomNavBar(),
 
@@ -80,29 +82,25 @@ class ProductDetailsScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                 horizontal: 3.w,
               ),
-              child: ExpansionPanelList(
-                elevation: 0.0,
-                animationDuration: const Duration(seconds: 1),
-                expandedHeaderPadding: EdgeInsets.all(10.sp),
-                children: <ExpansionPanel>[
-                  ExpansionPanel(
-                    headerBuilder: (context, isExpanded) {
-                      return Padding(
-                        padding: EdgeInsets.all(10.sp),
-                        child: Text(
-                          'توضیحات',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyText1!
-                              .copyWith(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary,
-                                  fontWeight: FontWeight.w500),
-                        ),
-                      );
-                    },
-                    body: Text('hi'),
-                    backgroundColor: Theme.of(context).colorScheme.surface,
+              child: CustomExpansionTile(
+                title: Text(
+                  AppConstants.DISPLAY_PRODUCT_DESCRIPTION_NAME_EXPANSION_PANEL,
+                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                        color: Theme.of(context).colorScheme.secondary,
+                        fontWeight: FontWeight.w500,
+                      ),
+                ),
+                borderRadius: 8.sp,
+                tilePadding: EdgeInsets.all(8.sp),
+                collapsedBackgroundColor: Theme.of(context).colorScheme.surface,
+                backgroundColor: Theme.of(context).colorScheme.surface,
+                defaultLeadingIconSize: 5.h,
+                children: [
+                  Text(
+                    AppConstants.DISPLAY_PRODUCT_DESCRIPTION_IN_BODY_OF_EXPANSION_PANEL,
+                    style: Theme.of(context).textTheme.button!.copyWith(
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
                   ),
                 ],
               ),
