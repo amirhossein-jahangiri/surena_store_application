@@ -18,6 +18,8 @@ class AppConstants {
   // todo constants for product details screen
   static const String DISPLAY_PRODUCT_CODE_TITLE = 'کد: ';
   static const String DISPLAY_PRODUCT_CATEGORY_NAME_TITLE = 'در دسته ';
+  static const String DISPLAY_PRODUCT_DESCRIPTION_NAME_EXPANSION_PANEL = 'توضیحات';
+  static const String DISPLAY_PRODUCT_DESCRIPTION_IN_BODY_OF_EXPANSION_PANEL = 'توضیحات این محصول به شرح زیر می باشد:';
   static const String ADD_TO_SHOPPING_CART_BTN_TEXT = 'افزودن';
   static const String BACK_ICON_BTN_TOOLTIP = 'برگشت';
   static const String GO_TO_SHOPPING_CART_ICON_BTN_TOOLTIP = 'سبد خرید';
