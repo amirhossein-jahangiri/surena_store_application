@@ -2,6 +2,7 @@
 // todo this class for write application constatns like that text
 
 class AppConstants {
+  static const String APP_TITLE = 'فروشگاه سورنا';
 
   // todo constants for tab controller screen
   static const String HOME = 'خانه';
@@ -20,6 +21,8 @@ class AppConstants {
   static const String DISPLAY_PRODUCT_CATEGORY_NAME_TITLE = 'در دسته ';
   static const String DISPLAY_PRODUCT_DESCRIPTION_NAME_EXPANSION_PANEL = 'توضیحات';
   static const String DISPLAY_PRODUCT_DESCRIPTION_IN_BODY_OF_EXPANSION_PANEL = 'توضیحات این محصول به شرح زیر می باشد:';
+  static const String DISPLAY_TITLE_OF_USER_COMMENTS_SECTION = 'دیدگاه کاربران';
+  static const String DISPLAY_COMMENTS_TITLE_FOR_COMMENTS_LENGTH_SECTION = 'دیدگاه';
   static const String ADD_TO_SHOPPING_CART_BTN_TEXT = 'افزودن';
   static const String BACK_ICON_BTN_TOOLTIP = 'برگشت';
   static const String GO_TO_SHOPPING_CART_ICON_BTN_TOOLTIP = 'سبد خرید';
