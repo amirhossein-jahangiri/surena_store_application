@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:sizer/sizer.dart';
-import 'package:surena_store_application/views/widgets/custom_expansion_tile.dart';
 
 import '/constants/app_constants.dart';
 import '/constants/assets_path_constants.dart';
-import '/views/screens/product_details_screen/product_details_screen_widgets/custom_card_product_title_id_and_category_name.dart';
-import '/views/widget_testing.dart';
-import '/views/widgets/shopping_cart_badget.dart';
-import './product_details_screen_widgets/product_price_with_buy_btn_in_bottom_nav_bar.dart';
+import '/views/widgets/shopping_cart_badge.dart';
+import 'product_details_screen_widgets/product_price_with_buy_btn_in_bottom_nav_bar.dart';
+import 'product_details_screen_widgets/product_description.dart';
+import 'product_details_screen_widgets/product_images.dart';
+import 'product_details_screen_widgets/user_comments_for_products.dart';
+import 'product_details_screen_widgets/custom_card_product_title_id_and_category_name.dart';
 
 // todo display product details screen
 
@@ -30,7 +30,7 @@ class ProductDetailsScreen extends StatelessWidget {
             tooltip: AppConstants.BACK_ICON_BTN_TOOLTIP,
           ),
           actions: [
-            ShoppingCartBadget(
+            ShoppingCartBadge(
               title: '2',
               press: () {},
             ),
@@ -61,100 +61,43 @@ class ProductDetailsScreen extends StatelessWidget {
           scrollDirection: Axis.vertical,
           children: [
             SizedBox(height: 1.h),
+
             // todo display image
-            CachedNetworkImage(
+            const ProductImages(
               imageUrl: AssetsPathConstants.RECOMMENDED_PRODUCTS_IMAGE_ASSET,
-              height: 30.h,
-              fit: BoxFit.contain,
-              progressIndicatorBuilder: (context, url, progress) {
-                return Center(
-                  child: CircularProgressIndicator(
-                    value: progress.progress,
-                  ),
-                );
-              },
             ),
+
             // todo display title
-            const CustomCardProductTitleProductIdAndProductCategoryName(),
-            SizedBox(height: 1.h),
-            // todo display details
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 3.w,
-              ),
-              child: CustomExpansionTile(
-                title: Text(
-                  AppConstants.DISPLAY_PRODUCT_DESCRIPTION_NAME_EXPANSION_PANEL,
-                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                        color: Theme.of(context).colorScheme.secondary,
-                        fontWeight: FontWeight.w500,
-                      ),
-                ),
-                borderRadius: 8.sp,
-                tilePadding: EdgeInsets.all(8.sp),
-                collapsedBackgroundColor: Theme.of(context).colorScheme.surface,
-                backgroundColor: Theme.of(context).colorScheme.surface,
-                defaultLeadingIconSize: 5.h,
-                children: [
-                  Text(
-                    AppConstants.DISPLAY_PRODUCT_DESCRIPTION_IN_BODY_OF_EXPANSION_PANEL,
-                    style: Theme.of(context).textTheme.button!.copyWith(
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-                  ),
-                ],
-              ),
+            const CustomCardProductTitleProductIdAndProductCategoryName(
+              productTitle: 'کیف زنانه مدل p',
+              productId: 1,
+              productCategoryName: 'کیف زنانه',
             ),
             SizedBox(height: 1.h),
+
+
+
+            // todo display description
+            const ProductDescription(
+              productDescription: AppConstants.DISPLAY_PRODUCT_DESCRIPTION_IN_BODY_OF_EXPANSION_PANEL,
+            ),
+            SizedBox(height: 1.h),
+
+
 
             // todo display user comments
-            Card(
-              margin: EdgeInsets.symmetric(horizontal: 3.w),
-              elevation: 0.0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.sp),
-              ),
-              color: Theme.of(context).colorScheme.surface,
-              child: SizedBox(
-                height: 30.h,
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 10,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      width: 70.w,
-                      height: 40.h,
-                      margin: EdgeInsets.all(8.sp),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.onPrimary,
-                        borderRadius: BorderRadius.circular(8.sp),
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                            color: Theme.of(context)
-                                .colorScheme
-                                .primaryVariant
-                                .withOpacity(0.1),
-                            blurRadius: 10,
-                            spreadRadius: 1,
-                            offset: Offset(-1.w, -0.5.h),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-            SizedBox(height: 1.h),
+            const UserCommentsForProducts(),
 
+
+
+            SizedBox(height: 1.h),
             // todo display similarly products
-            Placeholder(
-              fallbackHeight: 60.h,
-            ),
+            Placeholder(fallbackHeight: 60.h),
           ],
         ),
       ),
     );
   }
 }
+
+
