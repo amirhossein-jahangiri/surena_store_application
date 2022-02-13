@@ -4,13 +4,13 @@ import 'package:sizer/sizer.dart';
 import '/constants/app_constants.dart';
 
 
-// todo display shopping cart badget and hold shopping cart list count and show for user
+// todo display shopping cart badge and hold shopping cart list count and show for user
 
 
-class ShoppingCartBadget extends StatelessWidget {
+class ShoppingCartBadge extends StatelessWidget {
   final String? title;
   final Function()? press;
-  const ShoppingCartBadget({this.title, this.press, Key? key}) : super(key: key);
+  const ShoppingCartBadge({this.title, this.press, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
