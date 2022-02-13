@@ -6,7 +6,14 @@ import '/constants/app_constants.dart';
 // todo display custom card widget includes: product title, id and category name
 
 class CustomCardProductTitleProductIdAndProductCategoryName extends StatelessWidget {
+  final String? productTitle;
+  final int? productId;
+  final String? productCategoryName;
+
   const CustomCardProductTitleProductIdAndProductCategoryName({
+    this.productTitle,
+    this.productId,
+    this.productCategoryName,
     Key? key,
   }) : super(key: key);
 
@@ -27,21 +34,21 @@ class CustomCardProductTitleProductIdAndProductCategoryName extends StatelessWid
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'کیف زنانه مدل p',
+              productTitle!,
               style: Theme.of(context).textTheme.bodyText1!.copyWith(
                   color: Theme.of(context).colorScheme.secondary,
                   fontWeight: FontWeight.w500
               ),
             ),
             Text(
-              AppConstants.DISPLAY_PRODUCT_CODE_TITLE + '1',
+              '${AppConstants.DISPLAY_PRODUCT_CODE_TITLE} $productId',
               style: Theme.of(context).textTheme.subtitle2!.copyWith(
                   color: Theme.of(context).colorScheme.secondary,
                   fontWeight: FontWeight.w500
               ),
             ),
             Text(
-              AppConstants.DISPLAY_PRODUCT_CATEGORY_NAME_TITLE + 'لباس زنانه',
+              '${AppConstants.DISPLAY_PRODUCT_CATEGORY_NAME_TITLE} $productCategoryName',
               style: Theme.of(context).textTheme.subtitle2!.copyWith(
                   color: Theme.of(context).colorScheme.secondary,
                   fontWeight: FontWeight.w500
