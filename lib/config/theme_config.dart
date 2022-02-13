@@ -32,6 +32,7 @@ class ThemeConfig {
     bodyText1: lightBodyText1Style,
     bodyText2: lightBodyText2Style,
     button: lightButtonStyle,
+    subtitle1: lightSubTitle1Style,
     subtitle2: lightSubTitle2Style,
     overline: lightOverLineStyle,
   );
@@ -55,6 +56,11 @@ class ThemeConfig {
   static TextStyle lightButtonStyle = TextStyle(
     fontSize: 12.sp, // 13
     color: _lightPrimaryColor,
+    fontFamily: fontFamily,
+  );
+  static TextStyle lightSubTitle1Style = TextStyle(
+    fontSize: 11.sp, // 13
+    color: _lightSecondaryColor,
   );
   static TextStyle lightSubTitle2Style = TextStyle(
     fontSize: 10.sp, // 11
